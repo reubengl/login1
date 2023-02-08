@@ -1,0 +1,27 @@
+<h2 style="text-align:center;">{{title}}</h2>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4" style="background-color:grey  ;">
+<form [formGroup]="register" (ngSubmit)="getData()">
+  <br>
+  <input type="text" placeholder="username" formControlName="name">
+  <br>
+  <span *ngIf="vname && vname.invalid && vname.touched" style="color:rgb(21, 230, 31) ;">Enter valid data</span>
+  <br>
+    <input type="password" placeholder="Password" formControlName="password">
+    <br>
+    <span *ngIf="vpassword && vpassword.invalid && vpassword.touched" style="color:rgb(21, 230, 31) ;">Enter min 5 characters</span>
+  <br>
+    <input type="email" placeholder="email" formControlName="email">
+    <br>
+    <span *ngIf="vemail && vemail.invalid && vemail.touched" style="color:rgb(21, 230, 31) ;">Enter valid email</span>
+  <br>
+  <br>
+    <button [disabled]="register.invalid" type="submit"class="btn btn-primary">Submit</button>
+  <br>
+</form>
+    </div>
+  </div>
+</div>
